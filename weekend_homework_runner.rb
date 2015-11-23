@@ -34,7 +34,7 @@ puts"They are #{distance_between_bays} bays apart (expect 5)."
 puts "\n"
 
 #*********ADVANCED Q 1B*********#
-found_items_2 = items_at_bay_2('b3', 'c7', 'c9', 'a3')
+found_items_2 = list_of_items_2('b3', 'c7', 'c9', 'a3')
 distance_between_bays_2 = bay_distance_2('b3', 'c7', 'c9', 'a3')
 puts "The items found in b3, c7, c9 and a3 are #{found_items_2} respectively (expect picture frame, paint brush, shoe lace and blouse)."
 puts "They are #{distance_between_bays_2} bays apart (expect 15)."
@@ -47,7 +47,7 @@ puts "The bays containing the shoe lace, rusty nail and leg warmers are #{found_
 puts "Please collect in the following order: #{visit_order} (expect c1, c9, c10)."
 puts "\n"
 
-#*********ADVANCED Q 2A*********#
+#*********ADVANCED Q 2B*********#
 #Given "hanger, deodorant, candy wrapper, rubber band", determine that those items need to be collected from "a10, a4, c8, and b9"
 found_bays_2 = list_of_bays_2("hanger", "deodorant", "candy wrapper", "rubber band")
 visit_order_2 = which_way_2("hanger", "deodorant", "candy wrapper", "rubber band")

@@ -162,7 +162,7 @@ WAREHOUSE = [
 # end
 
 #*********QUESTION 1*********#
-#Attempt number one above before I got my head round blocks and enumerators
+#Attempt number one above before I got my head around blocks and enumerators
 
 #Step 1, define the item_at_bay method, with the arguement bay_number
 def bay(bay_number)
@@ -197,25 +197,28 @@ def list_of_bays (item1, item2, item3)
 end
 
 #*********ADVANCED Q 1A*********#
-
+#The list_of_items method from earlier is being used to deliver the list of items.
 def bay_distance (bay1, bay2, bay3)
   # Let's take all the parameters and store in an array.
   items = [bay1, bay2, bay3]
+#.map creates a new temporary array which is altered by the block.**move down to find_bay_index description**. The .minmax method assigns the minimum number in the index array to lowest and the maximum to highest.
   lowest, highest = items.map { |item| find_bay_index(item) }.minmax
+#A simple sum returns the desired answer.
   highest - lowest
 end
-
+#**The .index enumerable method returns the index number of the hashes which fit the conditions set by the block. Here the block takes in each bay number from the items array and matches them to their hash. Thus the index numbers of the bay numbers is returned in an array.
 def find_bay_index(bay)
   WAREHOUSE.index { |location| location[:bay] == bay }
 end
 
 #*********ADVANCED Q 1B*********#
-
-def items_at_bay_2 (bay_number1, bay_number2, bay_number3, bay_number4)
+#Really as above, but making a list_of_items_2 method that takes 4 arguements and looks for items instead of bay numbers.
+def list_of_items_2 (bay_number1, bay_number2, bay_number3, bay_number4)
   items_2 = [bay_number1, bay_number2, bay_number3, bay_number4]
   items_2.map { |bay| bay(bay)  }
 end
 
+#Again, as above, but adding a 4th arguement and dealing with items instead of bays.
 def bay_distance_2(bay1, bay2, bay3, bay4)
   items_2 = [bay1, bay2, bay3, bay4]
   lowest, highest = items_2.map { |item| find_bay_index(item) }.minmax
@@ -226,18 +229,18 @@ end
 
 def which_way (item1, item2, item3)
   bays = [item1, item2, item3]
-  index = bays.map { |item| item(item)  }.sort_by { |item| find_bay_index(item) }
+  bays.map { |i| item(i)  }.sort_by { |item| find_bay_index(item) }
 end
 
 #*********ADVANCED Q 2B*********#
 def list_of_bays_2 (item1, item2, item3, item4)
   bays = [item1, item2, item3, item4]
-  bays.map { |item| item(item)  }
+  bays.map { |i| item(i)  }
 end
 
 def which_way_2 (item1, item2, item3, item4)
   bays = [item1, item2, item3, item4]
-  index = bays.map { |i| item(i)  }.sort_by { |item| find_bay_index(item) }
+  bays.map { |i| item(i)  }.sort_by { |item| find_bay_index(item) }
 end
 
 
