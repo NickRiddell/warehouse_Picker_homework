@@ -227,6 +227,8 @@ end
 
 #*********ADVANCED Q 2A*********#
 
+#Here I already had the tools necessary, so I used the .sort_by method to sort the array of bays by their index number.
+
 def which_way (item1, item2, item3)
   bays = [item1, item2, item3]
   bays.map { |i| item(i)  }.sort_by { |item| find_bay_index(item) }
